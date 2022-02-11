@@ -1,8 +1,7 @@
 EnablePrimaryMouseButtonEvents (true)
 Hong = false
-step = 5
   function OnEvent(event, arg)
-	OutputLogMessage("event = %s, arg = %d\n", event, arg)
+ OutputLogMessage("event = %s, arg = %d\n", event, arg)
    if (event == "MOUSE_BUTTON_PRESSED" and arg == 4) then
     Hong = not Hong
      if Hong then
@@ -14,12 +13,11 @@ step = 5
  if (event == "MOUSE_BUTTON_RELEASED" and arg == 4) then
  end
     if Hong then
-     if (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and Hong) then
-    	  repeat
+     if IsMouseButtonPressed(1) then
+      repeat
        Sleep(10)
-       MoveMouseRelative(0,step)
-    	  until not IsMouseButtonPressed(1)
- 	 end
+     MoveMouseRelative(0, 5)
+       until not IsMouseButtonPressed(1)
+   end
    end
 end
-
