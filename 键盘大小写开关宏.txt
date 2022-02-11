@@ -1,0 +1,23 @@
+EnablePrimaryMouseButtonEvents (true)
+Hong = false
+  function OnEvent(event, arg)
+	OutputLogMessage("event = %s, arg = %d\n", event, arg)
+   if (IsKeyLockOn("capslock")) then
+    Hong = not Hong
+     if Hong then
+      OutputLogMessage("kai \n")
+      else
+      OutputLogMessage("guan \n")
+     end
+   end
+ if (IsKeyLockOn("capslock")) then
+ end
+    if Hong then
+     if (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and Hong) then
+    	  repeat
+       Sleep(10)
+       MoveMouseRelative(0,5)
+    	  until not IsMouseButtonPressed(1)
+ 	 end
+   end
+end
